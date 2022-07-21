@@ -1,21 +1,22 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
-const styles = {
-  width: '100%',
-  height: '70px',
-  background: '#d0d0d0',
-  color: '#212121',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-}
+import Logo from '../../assets/crown.svg';
+
+import './navigation.styles.scss'
 
 export const NavigationBar = () => {
   return (
     <>
-      <div style={styles}>
-        NavigationBar
+      <div className='navigation'>
+        <Link className="logo-container" to="/">
+          <img src={Logo} />
+        </Link>
+        <div className='nav-links-container'>
+          <Link className='nav-link' to="/shop">SHOP</Link>
+          <Link className='nav-link' to="/contact">CONTACT</Link>
+          <Link className='nav-link' to="/sign-in">SIGN IN</Link>
+        </div>
       </div>
       <Outlet />
     </>
